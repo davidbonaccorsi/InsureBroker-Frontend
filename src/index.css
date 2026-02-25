@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 245 75% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 71% 4%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 245 75% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 245 75% 60%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific */
+    --sidebar-background: 232 47% 12%;
+    --sidebar-foreground: 220 20% 85%;
+    --sidebar-primary: 245 75% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 232 47% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 232 47% 20%;
+    --sidebar-ring: 245 75% 60%;
+    --sidebar-muted: 220 9% 60%;
+
+    /* Chart colors */
+    --chart-1: 245 75% 60%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 200 80% 50%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 220 20% 97%;
+
+    --card: 232 47% 12%;
+    --card-foreground: 220 20% 97%;
+
+    --popover: 232 47% 12%;
+    --popover-foreground: 220 20% 97%;
+
+    --primary: 245 75% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 232 47% 18%;
+    --secondary-foreground: 220 20% 97%;
+
+    --muted: 232 47% 18%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 245 75% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 232 47% 20%;
+    --input: 232 47% 20%;
+    --ring: 245 75% 60%;
+
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 220 20% 85%;
+    --sidebar-primary: 245 75% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 232 47% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 232 47% 15%;
+    --sidebar-ring: 245 75% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-card rounded-lg p-6 shadow-sm border border-border;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold text-foreground;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+
+  .stat-change {
+    @apply text-xs font-medium mt-2 flex items-center gap-1;
+  }
+
+  .stat-change-positive {
+    @apply text-success;
+  }
+
+  .stat-change-negative {
+    @apply text-destructive;
+  }
+
+  .data-table {
+    @apply w-full;
+  }
+
+  .data-table th {
+    @apply text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider py-3 px-4 bg-muted/50;
+  }
+
+  .data-table td {
+    @apply py-4 px-4 text-sm border-b border-border;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-muted/30;
+  }
+
+  .page-header {
+    @apply flex items-center justify-between mb-6;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-foreground;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 3px;
+  }
+}
